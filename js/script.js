@@ -10,9 +10,13 @@ var post = function () {
 	$(listItem).append(deleteButton);
 	$('#list').append(listItem);
 	$(deleteButton).text('\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + 'delete').on('click', removeParent);
-	$('#iteminput').val("");
+	$('#iteminput').val("").focus();
 };
 
 $(document).ready(function() {
 	$('#postit').on('click', post);
+	$('form').submit(function(event){
+		post();
+		event.preventDefault();
+	});
 });

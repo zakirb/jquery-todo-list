@@ -29,11 +29,15 @@ body {
 	font-size: 1.1em;
 	font-weight: bold;
 	margin: 10px;
+	cursor: pointer;
 }
+
+
 
 a {
 	color: blue;
 	font-size: 40%;
+	cursor: pointer;
 }
 
 
