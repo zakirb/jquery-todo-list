@@ -1,25 +1,18 @@
+var removeParent = function() {
+	$(this).parent().remove();
+};
+
 var post = function () {
 	var listInput = $('#iteminput').val();
 	var listItem = $('<li>');
+	var deleteButton = $('<a>');
 	listItem.text(listInput);
+	$(listItem).append(deleteButton);
 	$('#list').append(listItem);
-	$('#iteminput').val("")
-	$(listItem).on('dblclick', removeItem);
+	$(deleteButton).text('\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + 'delete').on('click', removeParent);
+	$('#iteminput').val("");
 };
-
-var removeItem = function() {
-	$(this).remove();
-
-};
-
-
-
 
 $(document).ready(function() {
 	$('#postit').on('click', post);
-	$('li').on('dblclick', removeItem);
-
 });
-
-
-
